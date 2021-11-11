@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import styles from './App.module.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App(): JSX.Element {
   const [count, setCount] = useState<number>(0);
 
   return (
     <BrowserRouter>
-      <div className={styles.App}>
-        <header className={styles['App-header']}>
-          <img src={logo} className={styles['App-logo']} alt="logo" />
+      <div className={styles.app}>
+        <header className={styles['app-header']}>
+          <img src={logo} className={styles['app-logo']} alt="logo" />
           <p>Hello Vite + React!</p>
           <p>
             <button onClick={() => setCount((count) => count + 1)}>
@@ -22,7 +22,7 @@ function App(): JSX.Element {
           </p>
           <p>
             <a
-              className={styles['App-link']}
+              className={styles['app-link']}
               href="https://reactjs.org"
               target="_blank"
               rel="noopener noreferrer"
@@ -31,7 +31,7 @@ function App(): JSX.Element {
             </a>
             {' | '}
             <a
-              className={styles['App-link']}
+              className={styles['app-link']}
               href="https://vitejs.dev/guide/features.html"
               target="_blank"
               rel="noopener noreferrer"
@@ -39,14 +39,14 @@ function App(): JSX.Element {
               Vite Docs
             </a>
           </p>
-          <Switch>
+          <Routes>
             <Route path="/about">
               <main>About</main>
             </Route>
             <Route path="/">
               <main>Home</main>
             </Route>
-          </Switch>
+          </Routes>
         </header>
       </div>
     </BrowserRouter>
